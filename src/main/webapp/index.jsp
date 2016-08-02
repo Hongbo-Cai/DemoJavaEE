@@ -12,6 +12,7 @@
 </head>
 <body>
 <h1>login</h1>
+<%=session.getId()%>
 <form action="login.jsp" method="post">
     <input type="text" name="email" placeholder="EMAIL"><br>
     <input type="password" name="password" placeholder="PASSWORD"><br>

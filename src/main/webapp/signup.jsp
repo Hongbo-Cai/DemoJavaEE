@@ -12,6 +12,7 @@
 </head>
 <body>
 <h1>sign up</h1>
+<%=session.getId()%>
 <form action="register.jsp" method="post">
     <input type="text" name="email" placeholder="EMAIL"><br>
     <input type="password" name="password" placeholder="PASSWORD"><br>

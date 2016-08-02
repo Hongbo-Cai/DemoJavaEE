@@ -13,13 +13,11 @@
         preparedStatement.setString(2, password);
         ResultSet resultSet = preparedStatement.executeQuery();
         if (resultSet.next()) {
-            request.setAttribute("email", email);
-            request.getRequestDispatcher("home.jsp").forward(request, response);
-//            response.sendRedirect("home.jsp");
+            session.setAttribute("email", email);
+            response.sendRedirect("home.jsp");
         } else {
             request.setAttribute("message", "invalid email or password.");
             request.getRequestDispatcher("index.jsp").forward(request, response);
-//            response.sendRedirect("index.jsp");
         }
     } catch (SQLException e) {
         e.printStackTrace();

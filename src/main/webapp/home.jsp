@@ -11,8 +11,15 @@
     <title>home page</title>
 </head>
 <body>
+<%
+    if (session.getAttribute("email") == null) {
+        response.sendRedirect("index.jsp");
+    }
+%>
 <h1>home</h1>
-<%=request.getAttribute("email")%><br>
-<a href="index.jsp">LOG OUT</a>
+<%=session.getId()%><br>
+<%=session.getAttribute("email")%><br>
+<a href="another.jsp">go to another page...</a><br>
+<a href="logout.jsp">LOG OUT</a>
 </body>
 </html>
