@@ -19,5 +19,6 @@
         e.printStackTrace();
     }
 
-    request.getRequestDispatcher("index.jsp").forward(request, response); // forward 跳转
+//    request.getRequestDispatcher("index.jsp").forward(request, response); // forward 跳转
+    response.sendRedirect("index.jsp"); // redirect 重定向
 %>

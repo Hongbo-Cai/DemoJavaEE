@@ -12,6 +12,7 @@
 </head>
 <body>
 <h1>home</h1>
+<%=request.getAttribute("email")%><br>
 <a href="index.jsp">LOG OUT</a>
 </body>
 </html>

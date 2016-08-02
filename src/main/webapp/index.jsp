@@ -17,6 +17,13 @@
     <input type="password" name="password" placeholder="PASSWORD"><br>
     <input type="submit" value="LOGIN">
 </form>
+<%
+    String message = (String) request.getAttribute("message");
+    out.print(message!=null?message:"");
+%>
+<hr>
 <a href="signup.jsp">SIGN UP</a>
+<hr>
+<%=request.getRemoteAddr()%>
 </body>
 </html>
