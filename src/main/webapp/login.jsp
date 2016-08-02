@@ -1,22 +1,23 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Administrator
-  Date: 2016-08-02
-  Time: 08:59
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
-<head>
-    <title>login page</title>
-</head>
-<body>
-<h1>login</h1>
-<form action="" method="post">
-    <input type="text" name="email" placeholder="EMAIL"><br>
-    <input type="password" name="password" placeholder="PASSWORD"><br>
-    <input type="submit" value="LOGIN">
-</form>
-<a href="signup.jsp">SIGN UP</a>
-</body>
-</html>
+<%@ page import="com.mysql.jdbc.Driver" %>
+<%@ page import="java.sql.*" %>
+<%
+    String email = request.getParameter("email");
+    String password = request.getParameter("password");
+
+    try {
+        new Driver();
+        Connection connection = DriverManager.getConnection("jdbc:mysql:///db_test", "root", "system");
+        String sql = "SELECT * FROM db_test.user WHERE email = ? AND password = ?";
+        PreparedStatement preparedStatement = connection.prepareStatement(sql);
+        preparedStatement.setString(1, email);
+        preparedStatement.setString(2, password);
+        ResultSet resultSet = preparedStatement.executeQuery();
+        if (resultSet.next()) {
+            request.getRequestDispatcher("home.jsp").forward(request, response);
+        } else {
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        }
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
+%>

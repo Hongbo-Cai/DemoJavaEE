@@ -12,6 +12,6 @@
 </head>
 <body>
 <h1>home</h1>
-<a href="">LOG OUT</a>
+<a href="index.jsp">LOG OUT</a>
 </body>
 </html>

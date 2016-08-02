@@ -19,5 +19,5 @@
         e.printStackTrace();
     }
 
-    request.getRequestDispatcher("login.jsp").forward(request, response); // forward 跳转
+    request.getRequestDispatcher("index.jsp").forward(request, response); // forward 跳转
 %>
